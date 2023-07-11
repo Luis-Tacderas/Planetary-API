@@ -13,10 +13,20 @@
 
 ### Get request: http://127.0.0.1:5000/
 
-Response: Routed to Main of App
+Response: Hello World!
 
 ### Get request: http://127.0.0.1:5000/super_simple
 
 {
-    "message": "Hello from the Route Blueprint!"
+    "message": "Hello from the Planetary API."
+}
+
+### Get request: http://127.0.0.1:5000/api
+
+Response: Routed to Route Blueprint Main
+
+### Get request: http://127.0.0.1:5000/api/super_simple
+
+{
+    "message": "Hello from the Route Blueprint API!"
 }
