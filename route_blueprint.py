@@ -4,7 +4,7 @@ route_blueprint = Blueprint('route_blueprint', __name__)
 
 @route_blueprint.route('/')
 def index():
-    return "This is an example app"
+    return "Routed to Main of App"
 
 
 @route_blueprint.route('/super_simple')
