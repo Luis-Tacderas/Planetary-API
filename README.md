@@ -1,13 +1,15 @@
-Python libraries required:
+# Sample restful API using Flask Blueprint
+
+## Python libraries required
 	pip install SQLAlchemy
 	pip install Flask
 	pip install Flask-SQLAlchemy
 	pip install python-dotenv
 
-To run app:
+# To run app
 	python app.py
 
-To test app:
+# To test app
 
 	Get request: http://127.0.0.1:5000/
 
