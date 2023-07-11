@@ -1,4 +1,4 @@
-# Sample restful API using Flask Blueprint
+# Sample Python Restful API using Flask Blueprint
 
 ## Python libraries required
 	pip install SQLAlchemy
