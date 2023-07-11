@@ -6,17 +6,17 @@
 	pip install Flask-SQLAlchemy
 	pip install python-dotenv
 
-# To run app
+## To run app
 	python app.py
 
-# To test app
+## To test app
 
-	Get request: http://127.0.0.1:5000/
+### Get request: http://127.0.0.1:5000/
 
-	Response: Routed to Main of App
+Response: Routed to Main of App
 
-	Get request: http://127.0.0.1:5000/super_simple
+### Get request: http://127.0.0.1:5000/super_simple
 
-	{
-	    "message": "Hello from the Route Blueprint!"
-	}
+{
+    "message": "Hello from the Route Blueprint!"
+}
