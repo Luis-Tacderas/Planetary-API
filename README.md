@@ -30,3 +30,15 @@ Response: Routed to Route Blueprint Main
 {
     "message": "Hello from the Route Blueprint API!"
 }
+
+### Get request: http://127.0.0.1:5000/parameters?name=Luis&age=56
+
+{
+    "message": "Welcome Luis, you are old enough!"
+}
+
+### Get request: http://127.0.0.1:5000/url_variables/Luis/56
+
+{
+    "message": "Welcome Luis, you are old enough!"
+}
