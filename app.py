@@ -1,17 +1,14 @@
 from flask import Flask, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
+from database.model import db, User, Planet
 from sqlalchemy import Column, Integer, String, Float
 import os
 from route_blueprint import route_blueprint
-
+from database.model import planets_schema
 
 app = Flask(__name__)
-app.register_blueprint(route_blueprint)
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'planets.db')
-
-
-db = SQLAlchemy(app)
 
 
 @app.cli.command('db_create')
@@ -77,51 +74,14 @@ def super_simple():
 def not_found():
     return jsonify(message='That resource was not found'), 404
 
+def register_extensions(app):
+    db.init_app(app)
+    
+def register_blueprints(app):
+    app.register_blueprint(route_blueprint,url_prefix='/api')
 
-@app.route('/parameters')
-def parameters():
-    name = request.args.get('name')
-    age = int(request.args.get('age'))
-    if age < 18:
-        return jsonify(message='Sorry ' + name + ', you are not old enough.'), 401
-    else:
-        return jsonify(message='Welcome ' + name + ', you are old enough!')
-
-
-@app.route('/url_variables/<string:name>/<int:age>')
-def url_variables(name: str, age: int):
-   if age < 18:
-        return jsonify(message='Sorry ' + name + ', you are not old enough.'), 401
-   else:
-        return jsonify(message='Welcome ' + name + ', you are old enough!')
- 
-
-@app.route('/planets', methods=['GET'])
-def planets():
-    planets_list = Planet.query.all()
-    return jsonify(data=planets_list)
-
-
-# database models
-class User(db.Model):
-    __tablename__ = 'users'
-    id = Column(Integer, primary_key=True)
-    first_name = Column(String)
-    last_name = Column(String)
-    email = Column(String, unique=True)
-    password = Column(String)
-
-
-class Planet(db.Model):
-    __tablename__ = 'planets'
-    planet_id = Column(Integer, primary_key=True)
-    planet_name = Column(String)
-    planet_type = Column(String)
-    home_star = Column(String)
-    mass = Column(Float)
-    radius = Column(Float)
-    distance = Column(Float)
-
+register_extensions(app)
+register_blueprints(app)
 
 if __name__ == '__main__':
     app.run()
