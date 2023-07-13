@@ -7,6 +7,10 @@
 	pip install python-dotenv
 	pip install flask-marshmallow
 
+## Generate requirements.txt
+    pip install pipreqs # if not yet installed
+    pipreqs 
+
 ## To run app
 	python app.py
 

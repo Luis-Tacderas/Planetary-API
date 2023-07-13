@@ -16,7 +16,8 @@ class User(db.Model):
     password = Column(String)
 
 
-class Planet(db.Model):
+class Planet(
+    .Model):
     __tablename__ = 'planets'
     planet_id = Column(Integer, primary_key=True)
     planet_name = Column(String)
