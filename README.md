@@ -1,4 +1,20 @@
-# Sample Python Restful API using Flask Blueprint
+# About this project
+## Summary
+Backend Python restful API using Flask Blueprint and SQLite based on Linkedin tutorial.
+
+## Challenges
+None
+
+## Conclusions
+It is easy to build backend APIs using python.
+
+## Cool Techniques
+Flask Blueprints
+
+## What else I might have done 
+1. Use MySQL/Postgres for relational db and MongoDB for no SQl db.
+2. Complete all CRUD operation endpoints.
+3. Add an external web service call to get more planetary details.
 
 ## Python libraries required
 	pip install SQLAlchemy
